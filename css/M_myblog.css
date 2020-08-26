@@ -1,0 +1,676 @@
+@keyframes load {
+  from {
+    width: 0%; } }
+@keyframes fadeSlide {
+  0% {
+    opacity: 0; }
+  11.11% {
+    opacity: 1; }
+  33.33% {
+    opacity: 1; }
+  44.44% {
+    opacity: 0; }
+  100% {
+    opacity: 0; } }
+* {
+  margin: 0px;
+  padding: 0px;
+  border: 0px;
+  outline: 0px; }
+
+ul,
+li {
+  list-style: none; }
+
+img {
+  border: 0; }
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  background-color: #333333; }
+  html body,
+  body body {
+    font-family: "Noto Sans KR", sans-serif;
+    line-height: 1; }
+    @media all and (min-width: 320px) and (max-width: 480px) {
+      html body .myBlogMainBox,
+      body body .myBlogMainBox {
+        width: 100%;
+        height: 100%;
+        display: inline-block;
+        position: relative; }
+        html body .myBlogMainBox .homeImgSlide > img,
+        body body .myBlogMainBox .homeImgSlide > img {
+          width: 100%;
+          height: 100%;
+          position: absolute;
+          top: 0;
+          left: 0;
+          opacity: 0;
+          animation-name: fadeSlide;
+          animation-duration: 60s;
+          animation-iteration-count: infinite; }
+        html body .myBlogMainBox .homeImgSlide img:nth-child(1),
+        body body .myBlogMainBox .homeImgSlide img:nth-child(1) {
+          animation-delay: 0s; }
+        html body .myBlogMainBox .homeImgSlide img:nth-child(2),
+        body body .myBlogMainBox .homeImgSlide img:nth-child(2) {
+          animation-delay: 15s; }
+        html body .myBlogMainBox .homeImgSlide img:nth-child(3),
+        body body .myBlogMainBox .homeImgSlide img:nth-child(3) {
+          animation-delay: 30s; }
+        html body .myBlogMainBox .homeImgSlide img:nth-child(4),
+        body body .myBlogMainBox .homeImgSlide img:nth-child(4) {
+          animation-delay: 45s; }
+        html body .myBlogMainBox .homeImgSlide img:nth-child(5),
+        body body .myBlogMainBox .homeImgSlide img:nth-child(5) {
+          animation-delay: 60s; }
+        html body .myBlogMainBox .BlogNavBox,
+        body body .myBlogMainBox .BlogNavBox {
+          width: 100%;
+          height: 55px;
+          display: inline-block;
+          background-color: rgba(25, 30, 40, 0.9);
+          position: fixed;
+          z-index: 500;
+          top: 0;
+          left: 0; }
+          html body .myBlogMainBox .BlogNavBox .NavListTop,
+          body body .myBlogMainBox .BlogNavBox .NavListTop {
+            width: 20%;
+            height: 100%;
+            display: inline-block;
+            padding: 0;
+            cursor: pointer; }
+            html body .myBlogMainBox .BlogNavBox .NavListTop .NavHostName,
+            body body .myBlogMainBox .BlogNavBox .NavListTop .NavHostName {
+              color: #ffd02b;
+              font-size: 4.3vw;
+              font-weight: 700;
+              text-align: center;
+              margin-bottom: -10px;
+              margin-top: 10px; }
+            html body .myBlogMainBox .BlogNavBox .NavListTop .NavHostSubName,
+            body body .myBlogMainBox .BlogNavBox .NavListTop .NavHostSubName {
+              height: 50%;
+              font-size: 8px;
+              color: #979797;
+              text-align: center;
+              font-weight: 500; }
+          html body .myBlogMainBox .BlogNavBox .NavListBottom,
+          body body .myBlogMainBox .BlogNavBox .NavListBottom {
+            width: 80%;
+            height: 100%;
+            display: inline-block;
+            text-align: center;
+            float: right;
+            line-height: 56px;
+            margin: 0;
+            cursor: pointer; }
+            html body .myBlogMainBox .BlogNavBox .NavListBottom .userNavGuide,
+            body body .myBlogMainBox .BlogNavBox .NavListBottom .userNavGuide {
+              width: 20%;
+              height: 100%;
+              color: #d6d6d6;
+              font-size: 12px;
+              font-weight: 400;
+              padding-top: -5px;
+              float: left; }
+        html body .myBlogMainBox .blogContents_Home,
+        body body .myBlogMainBox .blogContents_Home {
+          width: 100%;
+          height: calc(100% - 55px);
+          display: inline-block;
+          background-color: rgba(25, 30, 40, 0.5);
+          position: relative;
+          margin-top: 55px; }
+          html body .myBlogMainBox .blogContents_Home .hostProfileImg,
+          body body .myBlogMainBox .blogContents_Home .hostProfileImg {
+            width: 100px;
+            height: 100px;
+            display: inline-block;
+            border-radius: 100px;
+            border: 5px solid #f3f3f3;
+            background-image: url("../img/myImg_1.jpg");
+            background-size: cover;
+            background-repeat: no-repeat;
+            position: absolute;
+            left: 50%;
+            margin-left: -50px;
+            margin-top: 100px; }
+          html body .myBlogMainBox .blogContents_Home .welcomeMent,
+          body body .myBlogMainBox .blogContents_Home .welcomeMent {
+            color: #fdfdfd;
+            font-size: 17px;
+            text-align: center;
+            margin-top: 210px;
+            margin-bottom: 20px; }
+          html body .myBlogMainBox .blogContents_Home .hostName,
+          body body .myBlogMainBox .blogContents_Home .hostName {
+            color: #fff;
+            font-size: 20px;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 35px; }
+            html body .myBlogMainBox .blogContents_Home .hostName .hostNameAdd,
+            body body .myBlogMainBox .blogContents_Home .hostName .hostNameAdd {
+              font-size: 20px;
+              color: #fdfdfd;
+              font-weight: 400; }
+          html body .myBlogMainBox .blogContents_Home .uselanguage,
+          body body .myBlogMainBox .blogContents_Home .uselanguage {
+            color: #fdfdfd;
+            font-size: 16px;
+            text-align: center;
+            line-height: 35px;
+            letter-spacing: -1px;
+            word-spacing: 2px; }
+        html body .myBlogMainBox .blogContents_About,
+        body body .myBlogMainBox .blogContents_About {
+          width: 100%;
+          height: calc(100% - 55px);
+          display: inline-block;
+          background-color: rgba(21, 27, 39, 0.9);
+          float: left;
+          position: relative;
+          display: none;
+          margin-top: 55px; }
+          html body .myBlogMainBox .blogContents_About .aboutBox,
+          body body .myBlogMainBox .blogContents_About .aboutBox {
+            width: 100%;
+            height: 90%;
+            display: inline-block;
+            position: absolute;
+            margin-top: 1%; }
+            html body .myBlogMainBox .blogContents_About .aboutBox .aboutBoxLeft,
+            body body .myBlogMainBox .blogContents_About .aboutBox .aboutBoxLeft {
+              width: 31%;
+              height: 100%;
+              display: inline-block;
+              margin-right: 2%;
+              margin-left: 2%;
+              display: inline-block;
+              float: left; }
+              html body .myBlogMainBox .blogContents_About .aboutBox .aboutBoxLeft .aboutContentLeft,
+              body body .myBlogMainBox .blogContents_About .aboutBox .aboutBoxLeft .aboutContentLeft {
+                width: 100%;
+                height: auto;
+                display: inline-block; }
+            html body .myBlogMainBox .blogContents_About .aboutBox .aboutBoxMid,
+            body body .myBlogMainBox .blogContents_About .aboutBox .aboutBoxMid {
+              width: 31%;
+              height: 100%;
+              display: inline-block;
+              margin-right: 2%;
+              display: inline-block;
+              float: left; }
+              html body .myBlogMainBox .blogContents_About .aboutBox .aboutBoxMid .aboutContentMid,
+              body body .myBlogMainBox .blogContents_About .aboutBox .aboutBoxMid .aboutContentMid {
+                width: 100%;
+                height: auto;
+                display: inline-block; }
+            html body .myBlogMainBox .blogContents_About .aboutBox .aboutBoxRight,
+            body body .myBlogMainBox .blogContents_About .aboutBox .aboutBoxRight {
+              width: 31%;
+              height: 100%;
+              display: inline-block;
+              display: inline-block; }
+              html body .myBlogMainBox .blogContents_About .aboutBox .aboutBoxRight .aboutContentRight,
+              body body .myBlogMainBox .blogContents_About .aboutBox .aboutBoxRight .aboutContentRight {
+                width: 100%;
+                height: auto;
+                display: inline-block; }
+            html body .myBlogMainBox .blogContents_About .aboutBox .aboutDay,
+            body body .myBlogMainBox .blogContents_About .aboutBox .aboutDay {
+              margin-top: 18px;
+              margin-bottom: -3px;
+              margin-left: 2.4%;
+              font-size: 8px;
+              font-weight: 300;
+              color: #ee763c; }
+            html body .myBlogMainBox .blogContents_About .aboutBox .aboutTheme,
+            body body .myBlogMainBox .blogContents_About .aboutBox .aboutTheme {
+              font-size: 14px;
+              font-weight: 600;
+              line-height: 30px;
+              letter-spacing: -1px;
+              word-spacing: 2px;
+              color: #fff;
+              margin-bottom: 5px;
+              cursor: pointer;
+              padding: 2%;
+              width: 100%;
+              border: none;
+              text-align: left;
+              outline: none;
+              transition: 0.4s; }
+            html body .myBlogMainBox .blogContents_About .aboutBox .aboutTheme:hover,
+            body body .myBlogMainBox .blogContents_About .aboutBox .aboutTheme:hover {
+              color: #777; }
+            html body .myBlogMainBox .blogContents_About .aboutBox .aboutTheme:after,
+            body body .myBlogMainBox .blogContents_About .aboutBox .aboutTheme:after {
+              content: "\002B";
+              color: #777;
+              font-weight: bold;
+              float: right;
+              margin-left: 5px; }
+            html body .myBlogMainBox .blogContents_About .aboutBox .aboutMent,
+            body body .myBlogMainBox .blogContents_About .aboutBox .aboutMent {
+              font-size: 12px;
+              font-weight: 400;
+              line-height: 2em;
+              letter-spacing: -1px;
+              word-spacing: 2px;
+              color: #bebebe;
+              margin-bottom: -5px;
+              padding: 0 2.5%;
+              max-height: 0px;
+              overflow: hidden;
+              transition: max-height 0.2s ease-out; }
+              html body .myBlogMainBox .blogContents_About .aboutBox .aboutMent .pointText,
+              body body .myBlogMainBox .blogContents_About .aboutBox .aboutMent .pointText {
+                font-weight: 600;
+                color: #e2e2e2; }
+            html body .myBlogMainBox .blogContents_About .aboutBox .smallBr,
+            body body .myBlogMainBox .blogContents_About .aboutBox .smallBr {
+              width: 100%;
+              height: 13px;
+              display: block; }
+            html body .myBlogMainBox .blogContents_About .aboutBox .active:after,
+            body body .myBlogMainBox .blogContents_About .aboutBox .active:after {
+              content: "\2212"; }
+        html body .myBlogMainBox .blogContents_Skill,
+        body body .myBlogMainBox .blogContents_Skill {
+          width: 100%;
+          height: calc(100% - 55px);
+          display: inline-block;
+          background-color: rgba(21, 27, 39, 0.9);
+          float: left;
+          position: relative;
+          display: none;
+          margin-top: 55px; }
+          html body .myBlogMainBox .blogContents_Skill .skillIconImg,
+          body body .myBlogMainBox .blogContents_Skill .skillIconImg {
+            width: 12%;
+            height: 90%;
+            display: inline-block;
+            margin-top: 7%;
+            margin-left: 7%;
+            position: absolute;
+            float: left;
+            display: none; }
+            html body .myBlogMainBox .blogContents_Skill .skillIconImg .IconImg,
+            body body .myBlogMainBox .blogContents_Skill .skillIconImg .IconImg {
+              width: 100%;
+              height: auto;
+              display: inline-block;
+              float: left;
+              margin-bottom: 4%; }
+            html body .myBlogMainBox .blogContents_Skill .skillIconImg .IconImg:hover,
+            body body .myBlogMainBox .blogContents_Skill .skillIconImg .IconImg:hover {
+              background-color: #333;
+              opacity: 0.7; }
+          html body .myBlogMainBox .blogContents_Skill .skillBox,
+          body body .myBlogMainBox .blogContents_Skill .skillBox {
+            width: 60%;
+            height: 80%;
+            display: inline-block;
+            margin-top: 7%;
+            margin-left: 31%; }
+            html body .myBlogMainBox .blogContents_Skill .skillBox .skillHtml,
+            body body .myBlogMainBox .blogContents_Skill .skillBox .skillHtml {
+              width: 100%;
+              height: 9%;
+              display: inline-block; }
+              html body .myBlogMainBox .blogContents_Skill .skillBox .skillHtml .htmlSkill::before,
+              body body .myBlogMainBox .blogContents_Skill .skillBox .skillHtml .htmlSkill::before {
+                width: calc(95% - 40px);
+                background-color: #ffd24d; }
+            html body .myBlogMainBox .blogContents_Skill .skillBox .skillCss,
+            body body .myBlogMainBox .blogContents_Skill .skillBox .skillCss {
+              width: 100%;
+              height: 9%;
+              display: inline-block; }
+              html body .myBlogMainBox .blogContents_Skill .skillBox .skillCss .cssSkill::before,
+              body body .myBlogMainBox .blogContents_Skill .skillBox .skillCss .cssSkill::before {
+                width: calc(91% - 40px);
+                background-color: #ffd24d; }
+            html body .myBlogMainBox .blogContents_Skill .skillBox .skillJavascript,
+            body body .myBlogMainBox .blogContents_Skill .skillBox .skillJavascript {
+              width: 100%;
+              height: 9%;
+              display: inline-block; }
+              html body .myBlogMainBox .blogContents_Skill .skillBox .skillJavascript .javascriptSkill::before,
+              body body .myBlogMainBox .blogContents_Skill .skillBox .skillJavascript .javascriptSkill::before {
+                width: calc(80% - 40px);
+                background-color: #ffdd77; }
+            html body .myBlogMainBox .blogContents_Skill .skillBox .skillJquery,
+            body body .myBlogMainBox .blogContents_Skill .skillBox .skillJquery {
+              width: 100%;
+              height: 9%;
+              display: inline-block; }
+              html body .myBlogMainBox .blogContents_Skill .skillBox .skillJquery .jquerySkill::before,
+              body body .myBlogMainBox .blogContents_Skill .skillBox .skillJquery .jquerySkill::before {
+                width: calc(86% - 40px);
+                background-color: #ffdd77; }
+            html body .myBlogMainBox .blogContents_Skill .skillBox .skillSass,
+            body body .myBlogMainBox .blogContents_Skill .skillBox .skillSass {
+              width: 100%;
+              height: 9%;
+              display: inline-block; }
+              html body .myBlogMainBox .blogContents_Skill .skillBox .skillSass .sassSkill::before,
+              body body .myBlogMainBox .blogContents_Skill .skillBox .skillSass .sassSkill::before {
+                width: calc(82% - 40px);
+                background-color: #ffdd77; }
+            html body .myBlogMainBox .blogContents_Skill .skillBox .skillAjax,
+            body body .myBlogMainBox .blogContents_Skill .skillBox .skillAjax {
+              width: 100%;
+              height: 9%;
+              display: inline-block; }
+              html body .myBlogMainBox .blogContents_Skill .skillBox .skillAjax .ajaxSkill::before,
+              body body .myBlogMainBox .blogContents_Skill .skillBox .skillAjax .ajaxSkill::before {
+                width: calc(74% - 40px);
+                background-color: #a6cfe3; }
+            html body .myBlogMainBox .blogContents_Skill .skillBox .skillPhp,
+            body body .myBlogMainBox .blogContents_Skill .skillBox .skillPhp {
+              width: 100%;
+              height: 9%;
+              display: inline-block; }
+              html body .myBlogMainBox .blogContents_Skill .skillBox .skillPhp .phpSkill::before,
+              body body .myBlogMainBox .blogContents_Skill .skillBox .skillPhp .phpSkill::before {
+                width: calc(73% - 40px);
+                background-color: #a6cfe3; }
+            html body .myBlogMainBox .blogContents_Skill .skillBox .skillPug,
+            body body .myBlogMainBox .blogContents_Skill .skillBox .skillPug {
+              width: 100%;
+              height: 9%;
+              display: inline-block; }
+              html body .myBlogMainBox .blogContents_Skill .skillBox .skillPug .pugSkill::before,
+              body body .myBlogMainBox .blogContents_Skill .skillBox .skillPug .pugSkill::before {
+                width: calc(58% - 40px);
+                background-color: #bfd9e6; }
+            html body .myBlogMainBox .blogContents_Skill .skillBox .skillNodejs,
+            body body .myBlogMainBox .blogContents_Skill .skillBox .skillNodejs {
+              width: 100%;
+              height: 9%;
+              display: inline-block; }
+              html body .myBlogMainBox .blogContents_Skill .skillBox .skillNodejs .nodejsSkill::before,
+              body body .myBlogMainBox .blogContents_Skill .skillBox .skillNodejs .nodejsSkill::before {
+                width: calc(57% - 40px);
+                background-color: #bfd9e6; }
+            html body .myBlogMainBox .blogContents_Skill .skillBox .skillPhotoshop,
+            body body .myBlogMainBox .blogContents_Skill .skillBox .skillPhotoshop {
+              width: 100%;
+              height: 9%;
+              display: inline-block; }
+              html body .myBlogMainBox .blogContents_Skill .skillBox .skillPhotoshop .photoshopSkill::before,
+              body body .myBlogMainBox .blogContents_Skill .skillBox .skillPhotoshop .photoshopSkill::before {
+                width: calc(93% - 40px);
+                background-color: #ffd24d; }
+            html body .myBlogMainBox .blogContents_Skill .skillBox .skillIllustrator,
+            body body .myBlogMainBox .blogContents_Skill .skillBox .skillIllustrator {
+              width: 100%;
+              height: 9%;
+              display: inline-block; }
+              html body .myBlogMainBox .blogContents_Skill .skillBox .skillIllustrator .illustratorSkill::before,
+              body body .myBlogMainBox .blogContents_Skill .skillBox .skillIllustrator .illustratorSkill::before {
+                width: calc(64% - 40px);
+                background-color: #ffe69a; }
+            html body .myBlogMainBox .blogContents_Skill .skillBox .skillBoot4,
+            body body .myBlogMainBox .blogContents_Skill .skillBox .skillBoot4 {
+              width: 100%;
+              height: 9%;
+              display: inline-block; }
+              html body .myBlogMainBox .blogContents_Skill .skillBox .skillBoot4 .boot4Skill::before,
+              body body .myBlogMainBox .blogContents_Skill .skillBox .skillBoot4 .boot4Skill::before {
+                width: calc(79% - 40px);
+                background-color: #ffdd77; }
+            html body .myBlogMainBox .blogContents_Skill .skillBox .allSkillBar,
+            body body .myBlogMainBox .blogContents_Skill .skillBox .allSkillBar {
+              background-color: #eee;
+              padding: 2px;
+              border-radius: 15px;
+              margin-bottom: 5px;
+              font-size: 14px;
+              font-weight: bold;
+              text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+              color: #333; }
+            html body .myBlogMainBox .blogContents_Skill .skillBox .allSkillBar::before,
+            body body .myBlogMainBox .blogContents_Skill .skillBox .allSkillBar::before {
+              content: attr(data-skill);
+              background-color: #f3b0ff;
+              display: inline-block;
+              padding: 5px 0 5px 10px;
+              border-radius: inherit;
+              animation: load 2s 0s; }
+        html body .myBlogMainBox .blogContents_Portfolio,
+        body body .myBlogMainBox .blogContents_Portfolio {
+          width: 100%;
+          height: calc(100% - 55px);
+          display: inline-block;
+          background-color: rgba(21, 27, 39, 0.9);
+          float: left;
+          position: relative;
+          display: none;
+          margin-top: 55px; }
+          html body .myBlogMainBox .blogContents_Portfolio .portfolioSlideBox,
+          body body .myBlogMainBox .blogContents_Portfolio .portfolioSlideBox {
+            width: 85%;
+            height: 300px;
+            display: inline-block;
+            background-color: rgba(21, 27, 39, 0.9);
+            position: absolute;
+            top: 5%;
+            left: 50%;
+            margin-left: -42.5%; }
+            html body .myBlogMainBox .blogContents_Portfolio .portfolioSlideBox .slideBox,
+            body body .myBlogMainBox .blogContents_Portfolio .portfolioSlideBox .slideBox {
+              width: 100%;
+              height: 100%;
+              display: inline-block; }
+              html body .myBlogMainBox .blogContents_Portfolio .portfolioSlideBox .slideBox .slideViewImg,
+              body body .myBlogMainBox .blogContents_Portfolio .portfolioSlideBox .slideBox .slideViewImg {
+                width: 100%;
+                height: 100%;
+                display: inline-block;
+                float: left; }
+            html body .myBlogMainBox .blogContents_Portfolio .portfolioSlideBox .slideStop,
+            body body .myBlogMainBox .blogContents_Portfolio .portfolioSlideBox .slideStop {
+              border-radius: 4px;
+              background-color: #f4511e;
+              border: none;
+              color: #ffffff;
+              text-align: center;
+              font-size: calc(20% + 10px);
+              padding: 10px;
+              width: 100px;
+              transition: all 0.5s;
+              cursor: pointer;
+              margin: 5px;
+              position: absolute;
+              bottom: 1%;
+              right: 61%; }
+            html body .myBlogMainBox .blogContents_Portfolio .portfolioSlideBox .slideStop span,
+            body body .myBlogMainBox .blogContents_Portfolio .portfolioSlideBox .slideStop span {
+              cursor: pointer;
+              display: inline-block;
+              position: relative;
+              transition: 0.5s; }
+            html body .myBlogMainBox .blogContents_Portfolio .portfolioSlideBox .slideStop span:after,
+            body body .myBlogMainBox .blogContents_Portfolio .portfolioSlideBox .slideStop span:after {
+              content: " \00bb";
+              position: absolute;
+              opacity: 0;
+              top: -2px;
+              right: -20px;
+              transition: 0.5s;
+              line-height: 15px;
+              font-size: 12px; }
+            html body .myBlogMainBox .blogContents_Portfolio .portfolioSlideBox .slideStop:hover span,
+            body body .myBlogMainBox .blogContents_Portfolio .portfolioSlideBox .slideStop:hover span {
+              padding-right: 10px; }
+            html body .myBlogMainBox .blogContents_Portfolio .portfolioSlideBox .slideStop:hover span:after,
+            body body .myBlogMainBox .blogContents_Portfolio .portfolioSlideBox .slideStop:hover span:after {
+              opacity: 1;
+              right: 0; }
+          html body .myBlogMainBox .blogContents_Portfolio .slideExplain,
+          body body .myBlogMainBox .blogContents_Portfolio .slideExplain {
+            width: 100%;
+            height: 50%;
+            display: inline-block;
+            clear: both;
+            background-color: rgba(25, 30, 40, 0.9);
+            opacity: 0.9; }
+            html body .myBlogMainBox .blogContents_Portfolio .slideExplain .slideTitle,
+            body body .myBlogMainBox .blogContents_Portfolio .slideExplain .slideTitle {
+              width: 100%;
+              height: 5%;
+              display: inline-block;
+              font-size: 15px;
+              text-align: center;
+              font-weight: 600;
+              letter-spacing: -1px;
+              word-spacing: 2px;
+              margin-top: 2%;
+              color: #ffd044;
+              text-shadow: 3px 3px 4px #111111; }
+            html body .myBlogMainBox .blogContents_Portfolio .slideExplain .slideDay,
+            body body .myBlogMainBox .blogContents_Portfolio .slideExplain .slideDay {
+              line-height: 10px;
+              letter-spacing: -1px;
+              word-spacing: 2px;
+              text-align: center;
+              font-size: 11px;
+              font-weight: 400;
+              color: #ffffff;
+              margin-bottom: 3px; }
+            html body .myBlogMainBox .blogContents_Portfolio .slideExplain .slideMent,
+            body body .myBlogMainBox .blogContents_Portfolio .slideExplain .slideMent {
+              width: 100%;
+              height: 70%;
+              display: inline-block;
+              font-size: 11px;
+              font-weight: 400;
+              line-height: 15px;
+              letter-spacing: -1px;
+              word-spacing: 2px;
+              text-align: center;
+              padding: 5px 10px;
+              color: #ffffff; }
+          html body .myBlogMainBox .blogContents_Portfolio .documentBtnColor,
+          body body .myBlogMainBox .blogContents_Portfolio .documentBtnColor {
+            width: calc(25% + 30px);
+            height: auto;
+            float: right;
+            font-size: 12px;
+            background-color: #ffd24d;
+            font-weight: 500;
+            margin-right: 10px;
+            position: relative;
+            text-align: center;
+            padding: 0px;
+            bottom: 0;
+            margin-bottom: 5%; }
+          html body .myBlogMainBox .blogContents_Portfolio .documentBtnColor:hover,
+          body body .myBlogMainBox .blogContents_Portfolio .documentBtnColor:hover {
+            background-color: #ffe69a; }
+          html body .myBlogMainBox .blogContents_Portfolio .btnBar,
+          body body .myBlogMainBox .blogContents_Portfolio .btnBar {
+            width: 60%;
+            position: absolute;
+            bottom: 0;
+            right: 0; }
+          html body .myBlogMainBox .blogContents_Portfolio .slidePreview,
+          body body .myBlogMainBox .blogContents_Portfolio .slidePreview {
+            width: 85%;
+            height: 11%;
+            display: inline-block;
+            position: absolute;
+            left: 50%;
+            margin-left: -42.5%;
+            margin-top: 500px; }
+            html body .myBlogMainBox .blogContents_Portfolio .slidePreview .preView,
+            body body .myBlogMainBox .blogContents_Portfolio .slidePreview .preView {
+              width: 20%;
+              height: 100%;
+              display: inline-block;
+              float: left; }
+            html body .myBlogMainBox .blogContents_Portfolio .slidePreview .preView:hover,
+            body body .myBlogMainBox .blogContents_Portfolio .slidePreview .preView:hover {
+              transform: scale(1.2);
+              transition: transform 0.35s;
+              background-size: cover;
+              cursor: pointer;
+              background-color: rgba(3, 3, 3, 0.5);
+              outline: 1px solid #fff; }
+            html body .myBlogMainBox .blogContents_Portfolio .slidePreview .preView_1,
+            body body .myBlogMainBox .blogContents_Portfolio .slidePreview .preView_1 {
+              background-image: url("../img/LolMarket_view.jpg");
+              background-size: cover;
+              background-repeat: no-repeat; }
+            html body .myBlogMainBox .blogContents_Portfolio .slidePreview .preView_2,
+            body body .myBlogMainBox .blogContents_Portfolio .slidePreview .preView_2 {
+              background-image: url("../img/GlenBliss_view.jpg");
+              background-size: cover;
+              background-repeat: no-repeat; }
+            html body .myBlogMainBox .blogContents_Portfolio .slidePreview .preView_3,
+            body body .myBlogMainBox .blogContents_Portfolio .slidePreview .preView_3 {
+              background-image: url("../img/BookList_view.jpg");
+              background-size: cover;
+              background-repeat: no-repeat; }
+            html body .myBlogMainBox .blogContents_Portfolio .slidePreview .preView_4,
+            body body .myBlogMainBox .blogContents_Portfolio .slidePreview .preView_4 {
+              background-image: url("../img/Product_view.jpg");
+              background-size: cover;
+              background-repeat: no-repeat; }
+            html body .myBlogMainBox .blogContents_Portfolio .slidePreview .preView_5,
+            body body .myBlogMainBox .blogContents_Portfolio .slidePreview .preView_5 {
+              background-image: url("../img/Photoshop_view.jpg");
+              background-size: cover;
+              background-repeat: no-repeat; }
+      html body .footerBar,
+      body body .footerBar {
+        width: 100%;
+        height: 15%;
+        position: fixed;
+        display: none;
+        margin-top: -10%; }
+        html body .footerBar .footerCallmeBar,
+        body body .footerBar .footerCallmeBar {
+          width: 100%;
+          height: 100%;
+          display: none;
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          background-color: rgba(21, 27, 39, 0.9); }
+          html body .footerBar .footerCallmeBar .callmeMentMove,
+          body body .footerBar .footerCallmeBar .callmeMentMove {
+            margin-left: 15px; }
+          html body .footerBar .footerCallmeBar .callmeMent,
+          body body .footerBar .footerCallmeBar .callmeMent {
+            height: 30%;
+            color: #fff;
+            line-height: 3em;
+            font-size: 12px;
+            float: left;
+            margin-top: 1.3%; }
+            html body .footerBar .footerCallmeBar .callmeMent .kakaoIcon,
+            body body .footerBar .footerCallmeBar .callmeMent .kakaoIcon {
+              font-size: 12px;
+              color: #f7e600;
+              float: left; }
+            html body .footerBar .footerCallmeBar .callmeMent .callIcon,
+            body body .footerBar .footerCallmeBar .callmeMent .callIcon {
+              font-size: 12px;
+              color: #009900;
+              float: left; }
+            html body .footerBar .footerCallmeBar .callmeMent .maillIcon,
+            body body .footerBar .footerCallmeBar .callmeMent .maillIcon {
+              font-size: 12px;
+              color: #e94232;
+              float: left; } }
+
+/*# sourceMappingURL=M_myblog.css.map */

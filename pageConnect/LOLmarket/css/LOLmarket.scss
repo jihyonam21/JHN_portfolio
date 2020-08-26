@@ -1,0 +1,668 @@
+@mixin optionSelect ($size, $color, $circle: false)
+{
+    width: $size;
+    height: $size;
+    float: left;
+    background-color: $color;
+    @if $circle
+    {
+        border-radius: $size / 2 ;
+    }
+}
+@mixin BoxSizeing($sizeW, $sizeH)
+{
+    width: $sizeW;
+    height: $sizeH;
+    display: inline-block;
+}
+@mixin optionImg ()
+{
+    float: left;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+
+$BackColor: #07121d;
+$FontColor: #beb187;
+$G_BorderColor_1: #6d5927;
+$G_BorderColor_2: #c3a563;
+$PointG_BorderColor_1: #00678a;
+$PointG_BorderColor_2: #09c4bd;
+
+
+*{
+    margin: 0px;
+    padding: 0px;
+    list-style-type: none;
+    color: #beb187;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button
+{
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+html, body
+{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+
+    .wrap
+    {
+        position: relative;
+        background-color: $BackColor;
+
+        .goodsNavBox
+        {
+            @include BoxSizeing(145px, 100%);
+
+            position: absolute;
+            left: 0;
+            .NavImgBox
+            {
+                height: 245px;
+                cursor: pointer;
+            }
+            .nikoImg:hover
+            {
+                transition: all 0.3s ;
+                margin-left: 30px;
+            }
+            .rakanImg:hover
+            {
+                transition: all 0.3s ;
+                margin-left: 30px;
+            }
+            .jayaImg:hover
+            {
+                transition: all 0.3s ;
+                margin-left: 30px;
+            }
+            .joyImg:hover
+            {
+                transition: all 0.3s ; 
+                margin-left: 30px;
+            }
+        }
+        .shoppingMainBox
+        {
+            @include BoxSizeing(1680px, 964px);
+            margin-top: 5px;
+            margin-left: 180px;
+
+
+            .shoppingLeftBox
+            {
+                @include BoxSizeing(835px, 845px);
+                border: 2px solid $G_BorderColor_2;
+                float: left;
+
+                .adminMent
+                {
+                    position: fixed;
+                    z-index: 100;
+
+                    margin-left: 30px;
+                    margin-top: 10px;
+                    font-weight: bold;
+                }
+
+                .backImg
+                {
+                    clear: both;
+                    @include BoxSizeing(835px, 845px);  
+                    position: relative;
+                    .goodsImg
+                    {
+                        @include BoxSizeing(200px, 300px);
+                        position: absolute;
+                        border: 2px solid $G_BorderColor_2;
+                        top: 520px;
+                        background-image: url("../img/rakan/rakan_Croma/rakan_nomal.jpg");
+                        background-repeat: no-repeat;
+                        background-size: cover;
+                        box-shadow: #111111 5px 5px 5px 1px;
+                        margin-left: 600px;
+                    }
+                    .opctionImg
+                    {
+                        opacity: 0;
+                        @include BoxSizeing(200px, 200px);
+                        position: absolute;
+                        border: 2px solid $G_BorderColor_2;
+                        top: 615px;
+                        left: 370px;
+                        background-image: url("../img/opction/rakan_pet.jpg");
+                        background-repeat: no-repeat;
+                        background-size: contain;
+                        box-shadow: #111111 5px 5px 5px 1px;
+                    }
+                    .detailsBox
+                    {
+                        @include BoxSizeing(200px, 200px);
+                        position: absolute;
+                        margin-top: 780px;
+                        margin-left: 10px;
+                        font-size: 28px;
+
+                        .modalBtn
+                        {
+                            @include BoxSizeing(170px, 45px);
+                            line-height: 37px;
+                            border: 2px solid $G_BorderColor_1;
+                            background: $BackColor;
+                            position: absolute;
+                            font-size: 23px;
+
+                            &:hover
+                            {
+                                color:#fff;
+                                transition: all 0.8s
+                            }
+                        }
+                        .modalControl 
+                        {
+                            width: 700px;
+                            height: 895px;
+                            margin-left: -100px;  
+                            background-color: $BackColor; 
+                            border: 3px solid  $G_BorderColor_2;
+
+                            .modal-header
+                            {
+                                border-bottom: 1px solid $G_BorderColor_2;
+                                .inGameTitle
+                                {
+                                    background-color: $BackColor;
+                                    color: $G_BorderColor_2;
+                                }
+                                .close
+                                {
+                                    color: #fff;
+                                }
+                            }
+                            .modalBodySize
+                            {
+                                max-height: 780px;
+                                .modalImage
+                                {
+                                    margin-left: 3px;
+                                }
+                            }
+                            .modal-footer
+                            {
+                                padding: 10px;
+                                border-top: 1px solid $G_BorderColor_2;
+                                .modalCloseBtn
+                                {
+                                    background-color: $G_BorderColor_2;
+                                    border: 1px solid $G_BorderColor_1;
+                                    
+                                }
+                            }
+                        }
+                    }
+                    .jayaRakanBackImg
+                    {
+                        @include BoxSizeing(830px, 840px);
+                    }
+                }
+            }
+            .shoppingRigthBox
+            {
+                @include BoxSizeing(835px, 845px);
+                border: 2px solid $G_BorderColor_2;
+                float: right;
+                
+                .soppingTitleBox
+                {
+                    @include BoxSizeing(810px, 105px);
+                    border: 2px solid $G_BorderColor_1;
+                    margin-left: 10px;
+                    margin-top: 10px;
+
+                    .soppingTitle
+                    {
+                        font-size: 30px;
+                        font-weight: bold;
+                        text-align: center;
+                        line-height: 103px;
+                    }
+                }
+                .colorSelect
+                {
+                    @include BoxSizeing(750px, 65px);
+                    margin-top: 15px;
+                    margin-left: 40px;
+
+                    .colorBox 
+                    {
+                        @include BoxSizeing(100px, 95px);
+                        float: left;
+                        margin-left: 70px; 
+
+                        &:hover
+                        {
+                            .colorlText
+                            {
+                                color: $G_BorderColor_1;
+                            }
+                        }      
+                        .nomalColor
+                        {
+                            @include optionSelect (45px, #fff, true);
+                            margin-top: 20px;
+                            margin-left: 27.5px;
+                            cursor: pointer;
+                            
+                        }
+                        .redColor
+                        {
+                            @include optionSelect (45px, red, true);
+                            margin-top: 20px;
+                            margin-left: 27.5px;
+                            cursor: pointer;
+                        }
+                        .blueColor
+                        {
+                            @include optionSelect (45px, blue, true);
+                            margin-top: 20px;
+                            margin-left: 27.5px;
+                            cursor: pointer;
+                        }
+                        .purpleColor
+                        {
+                            @include optionSelect (45px, purple, true);
+                            margin-top: 20px;
+                            margin-left: 27.5px;
+                            cursor: pointer;
+                        }
+                        .colorlText 
+                        {
+                            @include BoxSizeing(100px, 30px);
+                            text-align: center;
+                            line-height: 28px;
+                            font-size: 20px;
+                        }
+                    }     
+                  
+                }
+                .optionGoods
+                {
+                    @include BoxSizeing(810px, 200px);
+                    margin-top: 60px;
+                    cursor: pointer;
+
+                    .optionBox
+                    {
+                        @include BoxSizeing(150px, 180px);
+                        float: left;
+                        margin-left: 40px;
+                        position: relative;
+                        &:hover
+                        {
+                            .layerBox
+                            {
+                                opacity: 1;
+                                color: $G_BorderColor_2;
+                                position: absolute;
+                                top: 0;
+                                left: 0;
+                                width: 100%;
+                                height: 100%;
+                                transition: all 0.5s;
+                            }
+                        }
+                        .nikoPetBox
+                        {
+                            @include BoxSizeing(150px, 150px);
+                            @include optionImg();
+                            background-image: url("../img/opction/niko_pet.jpg");
+                        }
+                        .rakanPetBox
+                        {
+                            @include BoxSizeing(150px, 150px);
+                            @include optionImg();
+                            background-image: url("../img/opction/rakan_pet.jpg"); 
+                        }
+                        .jayaPetBox
+                        {
+                            @include BoxSizeing(150px, 150px);
+                            @include optionImg();
+                            background-image: url("../img/opction/jaya_pet.jpg");
+                        }
+                        .joyPetBox
+                        {
+                            @include BoxSizeing(150px, 150px);
+                            @include optionImg();
+                            background-image: url("../img/opction/joy_pet.jpg");
+                        }
+                        .optionText
+                        {
+                            @include BoxSizeing(150px, 30px);
+                            text-align: center;
+                            line-height: 28px;
+                            font-size: 20px;
+                        }
+                        .layerBox
+                        {
+                            background-color: rgba(12,12,12,0.7);
+                            opacity: 0;
+                            color: $G_BorderColor_2;
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            width: 100%;
+                            height: 100%;
+                            transition: all 0.5s;
+                        }
+                    }
+                }
+                .priceBox
+                {
+                    @include BoxSizeing(810px, 105px);
+                    border: 2px solid $G_BorderColor_1;
+                    margin-left: 10px;
+
+                    .goodsCount
+                    {
+                        @include BoxSizeing(100px, 40px);
+                        font-size: 30px;
+                        color: $G_BorderColor_2;
+                        text-align: right;
+                        margin-left: 100px;
+                        margin-top: 30px;
+                        background-color: $BackColor;
+                        border: 2px solid $G_BorderColor_2;
+                        outline: none;
+                    }
+                    .CountBox
+                    {
+                        @include BoxSizeing(30px, 80px);
+                        font-size: 30px;
+                        text-align: right;
+                        margin-right: 60px;
+                        
+                    }
+                    .sumPrice
+                    {
+                        @include BoxSizeing(300px, 80px);
+                        font-size: 30px;
+                        text-align: right;
+                    }
+                    .addGoodsBox
+                    {
+                        @include BoxSizeing(100px, 54px);
+                        border: 2px solid $G_BorderColor_2;
+                        margin-top: 10px;
+                        margin-left: 20px;
+
+                        &:hover
+                        {
+                            color: #fff;
+                            transition: all 0.8s;
+                        }
+                        .addGoods
+                        {
+                            text-align: center;
+                            line-height: 50px;
+                            font-size: 30px;
+                            letter-spacing: 5px;
+                            cursor: pointer;
+        
+                            font-weight: bold;
+                            &:hover
+                            {
+                                color: #fff;
+                                transition: all 0.8s;
+                            }
+                        }
+                    }
+                    .allGoodsBox
+                    {
+                        @include BoxSizeing(810px, 232px);
+                        border: 2px solid $G_BorderColor_1;
+                        margin-left: -2px;
+                        text-align: center;
+
+                        .allGoods
+                        {
+                            @include BoxSizeing(800px, 220px);
+                            color: $FontColor;
+                            padding: 20px;
+                            font-size: 25px;
+                            overflow: hidden;
+                            font-family: 'Noto Sans KR', sans-serif;
+                        }
+                    }
+                }
+            }
+            .openCartBox
+                {
+                    @include BoxSizeing(1680px, 104px);
+                    border: 2px solid $G_BorderColor_2;
+                    margin-top: 10px;
+
+                    &:hover
+                    {
+                        color: #fff;
+                        transition: all 0.8s;
+                    }
+                    .openCart
+                    {
+                        text-align: center;
+                        line-height: 100px;
+                        font-size: 30px;
+                        letter-spacing: 5px;
+                        cursor: pointer;
+    
+                        font-weight: bold;
+                        &:hover
+                        {
+                            color: #fff;
+                            transition: all 0.8s;
+                        }
+                    }
+                }
+        
+
+            .shoppingCartBox
+            {
+                @include BoxSizeing(835px, 845px);
+                background-color: rgba(7, 18, 29, 0.9);
+                position: absolute;
+                top: 0;
+                right: 0;
+                margin-top: 5px;
+                margin-right: 60px;
+                color: #111;
+                border: 2px solid $G_BorderColor_2;
+                opacity: 0;
+                display: none;
+
+                .shoppingCart
+                {
+                    .row
+                    {
+                        .col-6
+                        {
+                            .cartTitle
+                            {
+                                color: #fff;
+                                font-size: 40px;
+                                font-weight: bold;
+                                display: inline-block;
+                            }
+                            .closeMove
+                            {
+                                color: #fff;
+                                margin-right: -420px;
+                            }
+                        }
+                    }
+                    .card
+                    {
+                        background-color: $G_BorderColor_2;
+                        .card-header
+                        {
+                            height: 60px;
+                            
+                            .product_title
+                            {
+
+                                color: #111111;
+                                display: inline-block;
+                                vertical-align: top;
+                            }
+                            .allDeleteCheck
+                            {
+                                width: 25px;
+                                height: 25px;
+                                display: inline-block;
+                                vertical-align: -4px;
+                            }
+                        }
+                        .cardBox
+                        {
+                            max-height: 550px;
+                            text-align: 110px;
+                            color: #111111;
+                            overflow-x: hidden;
+                            .deleteCheck
+                            {
+                                width: 25px;
+                                height: 25px;
+                                line-height: 10px;
+                                float: left;
+                                margin-right: 10px;
+                            }
+                            .cartImg
+                            {
+                                @include BoxSizeing(90px, 120px);
+                                display: inline-block;
+                                float: left;
+                                border: 2px solid $G_BorderColor_1;
+                            }
+                            .cartImgText
+                            {
+                                @include BoxSizeing(590px, 120px);
+                                font-size: 25px;
+                                line-height: 50px;
+                                color: #111111;
+                                padding: 10px;
+                                border-bottom: 2px solid $G_BorderColor_1;
+                                border-top: 2px solid $G_BorderColor_1;
+                                border-right: 2px solid $G_BorderColor_1;
+                            }
+                            .cartSelectPrice
+                            {
+                                @include BoxSizeing(690px, 10px);
+                                text-align: right;
+                                color: #111111;
+                                font-size: 23px;
+                                margin-top: -20px;
+                            }
+                        
+                        }
+                        .card-footer
+                        {
+                            .lastPriceBox
+                            {
+                                @include BoxSizeing(750px, 30px);
+                                font-size: 30px;
+                                text-align: right;
+                                float: right;
+                                color: #111;
+                            }
+                            .cardfooterBox
+                            {
+                                .selectDelete
+                                {
+                                    @include BoxSizeing(100px, 50px);
+                                    color: #111;
+                                    background-color: $G_BorderColor_2;
+                                    border: 2px solid $G_BorderColor_1;
+                                    float: left;
+                                }
+                                .shoppingContinue
+                                {
+                                    @include BoxSizeing(120px, 50px);
+                                    color: #111;
+                                    background-color: $G_BorderColor_2;
+                                    border: 2px solid $G_BorderColor_1;
+                                    float: left;
+                                }
+                                .selectBuy
+                                {
+                                    @include BoxSizeing(520px, 50px);
+                                    color: #fff;
+                                    background-color: $G_BorderColor_1;
+                                    border: 2px solid $G_BorderColor_1;
+                                    float: left;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .noticeModalBox
+    {
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        display: none;
+        position: fixed;
+        left: 0;
+        top: 0;
+        background-color: rgb(0,0,0);
+        background-color: rgba(0,0,0,0.4);
+        z-index: 50;
+
+        .noticeModal
+        {
+            width: 30%;
+            background-color: #fefefe;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+
+            .adminMentRow
+            {
+                font-size: 28px;
+                font-weight: bold;
+                color: #fff;
+            }
+            .noticeClose
+            {
+                color: #aaa;
+                float: right;
+                font-size: 28px;
+                font-weight: bold;
+            }
+            .noticeClose:hover,
+            .noticeClose:focus
+            {
+                color: black;
+                text-decoration: none;
+                cursor: pointer;
+            }
+            .documentDownload
+            {
+                @include BoxSizeing(200px, 50px);
+                text-align: center;
+                line-height: 47px;
+                background-color: $G_BorderColor_2;
+                border: 1px solid $G_BorderColor_1;
+                color: #111;
+                margin: auto;
+            }
+        }
+    }
+}

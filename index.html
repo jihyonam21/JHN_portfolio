@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- 최대한 최신으로 랜더링 하게하기 위함 -->
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <!-- 폰트 -->
+  <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:100,300,400,500,700&display=swap&subset=korean"
+    rel="stylesheet" />
+  <!-- 부트스트랩/css -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+  <!-- JQUERY -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <!-- 부트스트랩 -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <!-- 부트스트랩js -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <!-- xeicon -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css" />
+  <title>HYONAM_BLOG</title>
+
+  <!-- 모니터 css -->
+  <link rel="stylesheet" href="./css/myblog.css" />
+  <!-- 모바일 css width 320~480 -->
+  <link href="./css/M_myblog.css" media="all and (min-width: 320px) and (max-width: 480px)" rel="stylesheet" />
+  <!-- 태블릿 css width 481~1024
+  <link href="./css/T_myblog.css" media="all and (min-width: 481px) and (max-width: 1024px)" rel="stylesheet" /> -->
+  <script type="text/javascript" src="./script/myblog.js"></script>
+</head>
+
+<body>
+  <section class="myBlogMainBox" id="myBlogMainBox">
+    <!--Background Imgslide-->
+    <div class="homeImgSlide">
+      <img src="./img/homeimg/view_1.jpg" alt="view_1.jpg" />
+      <img src="./img/homeimg/view_2.jpg" alt="view_2.jpg" />
+      <img src="./img/homeimg/view_3.jpg" alt="view_3.jpg" />
+      <img src="./img/homeimg/view_4.jpg" alt="view_4.jpg" />
+      <img src="./img/homeimg/view_5.jpg" alt="view_5.jpg" />
+    </div>
+    <!--Nav-->
+    <nav class="BlogNavBox" id="BlogNavBox">
+      <ul class="NavListTop" id="NavListTop">
+        <li class="NavHostName">
+          <p>HYONAM</p>
+        </li>
+        <li class="NavHostSubName">
+          <p>PERSONAL BLOG</p>
+        </li>
+      </ul>
+      <ul class="NavListBottom" id="NavListBottom">
+        <li class="userNavGuide NavHome" id="NavHome">
+          <p>Home</p>
+        </li>
+        <li class="userNavGuide NavAbout" id="NavAbout">
+          <p>About</p>
+        </li>
+        <li class="userNavGuide NavSkill" id="NavSkill">
+          <p>Skill</p>
+        </li>
+        <li class="userNavGuide NavPortfolio" id="NavPortfolio">
+          <p>Portfolio</p>
+        </li>
+        <li class="userNavGuide NavCallme" id="NavCallme">
+          <p>Call me</p>
+        </li>
+      </ul>
+    </nav>
+    <!--home Contents-->
+    <article class="blogContents_Home" id="blogContents_Home">
+      <div class="hostProfileImg" id="hostProfileImg"></div>
+      <p class="hostMent welcomeMent">안녕하세요!</p>
+      <p class="hostMent hostName">
+        지효남<span class="hostNameAdd">입니다.</span>
+      </p>
+      <p class="hostMent uselanguage">
+        페이지에서 사용된 언어는 Html, Css, Sass, JavaScript, Jquery입니다.<br />
+        95년생 남성이며, Pc 게임 플레이가 취미입니다. <br />
+        블로그는 취업용 포트폴리오를 모아두었으며,<br />
+        저의 간단한 소개 페이지와 연락처가 존재합니다.<br />
+        <br />
+        (모든 페이지는 취업용 포트폴리오 입니다.)<br />
+        width: 320 ~ 480px 에 반응합니다.
+      </p>
+      <input type="hidden" id="backgroundFixing_1" />
+    </article>
+
+    <!--aboutBox-->
+    <article class="blogContents_About" id="blogContents_About">
+      <ul class="aboutBox" id="aboutBox">
+        <li class="aboutBoxLeft" id="aboutBoxLeft">
+          <img class="aboutContentLeft" id="aboutContentLeft" src="./img/about_left.jpg" />
+
+          <p class="aboutDay">2012 ~ 2014 (졸업)</p>
+          <p class="aboutTheme">경일고등학교</p>
+          <p class="aboutMent">
+            <span class="pointText">1학년</span> - 학급반장 당선<br />
+            INC 동아리 가입 (컴퓨터활동)<br />
+            ITQ 한글 자격증 취득<br />
+
+            <span class="smallBr">&nbsp;</span>
+
+            <span class="pointText">2학년</span> - 학급반장 당선 <br />
+            ITQ 파워포인트 자격증 취득 <br />
+            모의주식투자경진대회 대상 <br />
+            엠할리데이 패턴그래픽 공모전 입상<br />
+            디오컨벤션웨딩뷔페 아르바이트<br />
+
+            <span class="smallBr">&nbsp;</span>
+
+            <span class="pointText">3학년</span> - 동아리 총무 취임<br />
+            ITQ 엑셀 자격증 취득<br />
+          </p>
+        </li>
+        <li class="aboutBoxMid" id="aboutBoxMid">
+          <img class="aboutContentMid" id="aboutContentMid" src="./img/about_mid.jpg" />
+
+          <p class="aboutDay">2013 ~ 2015 (퇴사)</p>
+          <p class="aboutTheme">케이지 시스템</p>
+          <p class="aboutMent">
+            <span class="pointText">인턴(3개월)</span> - 케이블 탈피<br />
+            반도체장비 배선<br />
+            장비 청소 파견<br />
+
+            <span class="smallBr">&nbsp;</span>
+
+            <span class="pointText">정규직 계약</span> -
+            부서변경(구매관리팀)<br />
+            입출고 자재 관리<br />
+            발주 및 거래명세서 관리<br />
+            물품 NEGO 성공<br />
+          </p>
+          <span class="smallBr">&nbsp;</span>
+          <span class="smallBr">&nbsp;</span>
+          <p class="aboutDay varyAboutDay">2015 ~ 2017 (전역)</p>
+          <p class="aboutTheme">국군홍천병원</p>
+          <p class="aboutMent">
+            분대장 취임<br />
+            의무사령부 슬로건 및 부대 로고 제작 파견<br />
+            부대내 현수막 디자인 담당<br />
+            부대 작업복 디자인 제작<br />
+          </p>
+        </li>
+        <li class="aboutBoxRight" id="aboutBoxRight">
+          <img class="aboutContentRight" id="aboutContentRight" src="./img/about_right.jpg" />
+
+          <p class="aboutDay">2017 ~ 2019</p>
+          <p class="aboutTheme">건설현장근무</p>
+          <p class="aboutMent">
+            <span class="pointText">충무로역 호텔 더블에이</span> - 외벽공사
+            보조<br />
+            <span class="pointText">안산 원곡동 연길초두부</span> - 지하 철거
+            및 리모델링 보조<br />
+            <span class="pointText">안산 원곡동 794 다문화2길 28</span> - 건설
+            보조 및 관리<br />
+          </p>
+          <span class="smallBr">&nbsp;</span>
+          <span class="smallBr">&nbsp;</span>
+          <p class="aboutDay">2019.12 (수료)</p>
+          <p class="aboutTheme">라인컴퓨터아트학원</p>
+          <p class="aboutMent">
+            <span class="pointText">웹 언어 학습</span> - 03/11 시작
+          </p>
+        </li>
+      </ul>
+    </article>
+
+    <!--skillBox-->
+    <article class="blogContents_Skill" id="blogContents_Skill">
+      <div class="skillIconImg" id="skillIconImg">
+        <img src="./img/icon/html_Img.png" alt="HTML" class="IconImg IconImg_1" id="IconImg_1" />
+        <img src="./img/icon/css_Img.png" alt="CSS" class="IconImg IconImg_2" id="IconImg_2" />
+        <img src="./img/icon/script_Img.png" alt="JAVASCRIPT" class="IconImg IconImg IconImg_3" id="IconImg_3" />
+        <img src="./img/icon/jquery_Img.png" alt="JQUERY" class="IconImg IconImg_4" id="IconImg_4" />
+        <img src="./img/icon/sass_Img.png" alt="SASS" class="IconImg IconImg_5" id="IconImg_5" />
+        <img src="./img/icon/boot_Img.png" alt="BOOT4" class="IconImg IconImg_12" id="IconImg_12" />
+        <img src="./img/icon/ajax_Img.jpg" alt="AJAX" class="IconImg IconImg_6" id="IconImg_6" />
+        <img src="./img/icon/php_Img.jpg" alt="PHP" class="IconImg IconImg_7" id="IconImg_7" />
+        <img src="./img/icon/pug_Img.jpg" alt="PUG" class="IconImg IconImg_8" id="IconImg_8" />
+        <img src="./img/icon/node_Img.png" alt="NODEJS" class="IconImg IconImg_9" id="IconImg_9" />
+        <img src="./img/icon/ps_Img.jpg" alt="PHOTOSHOP" class="IconImg IconImg_10" id="IconImg_10" />
+        <img src="./img/icon/ai_Img.jpg" alt="ILLUSTRATOR" class="IconImg IconImg_11" id="IconImg_11" />
+      </div>
+      <ul class="skillBox" id="skillBox">
+        <li class="skillHtml" id="skillHtml">
+          <div class="allSkillBar htmlSkill" data-skill="HTML">95%</div>
+          <p></p>
+        </li>
+        <li class="skillCss" id="skillCss">
+          <div class="allSkillBar cssSkill" data-skill="CSS">91%</div>
+          <p></p>
+        </li>
+        <li class="skillJavascript" id="skillJavascript">
+          <div class="allSkillBar javascriptSkill" data-skill="JAVASCRIPT">
+            80%
+          </div>
+          <p></p>
+        </li>
+        <li class="skillJquery" id="skillJquery">
+          <div class="allSkillBar jquerySkill" data-skill="JQUERY">86%</div>
+          <p></p>
+        </li>
+        <li class="skillSass" id="skillSass">
+          <div class="allSkillBar sassSkill" data-skill="SASS">82%</div>
+          <p></p>
+        </li>
+        <li class="skillBoot4" id="skillBoot4">
+          <div class="allSkillBar boot4Skill" data-skill="BOOTSTRAP">79%</div>
+          <p></p>
+        </li>
+        <li class="skillAjax" id="skillAjax">
+          <div class="allSkillBar ajaxSkill" data-skill="AJAX">74%</div>
+          <p></p>
+        </li>
+        <li class="skillPhp" id="skillPhp">
+          <div class="allSkillBar phpSkill" data-skill="PHP">73%</div>
+          <p></p>
+        </li>
+        <li class="skillPug" id="skillPug">
+          <div class="allSkillBar pugSkill" data-skill="PUG">58%</div>
+          <p></p>
+        </li>
+        <li class="skillNodejs" id="skillNodejs">
+          <div class="allSkillBar nodejsSkill" data-skill="NODEJS">57%</div>
+          <p></p>
+        </li>
+        <li class="skillPhotoshop" id="skillPhotoshop">
+          <div class="allSkillBar photoshopSkill" data-skill="PHOTOSHOP">
+            93%
+          </div>
+          <p></p>
+        </li>
+        <li class="skillIllustrator" id="skillIllustrator">
+          <div class="allSkillBar illustratorSkill" data-skill="ILLUSTRATOR">
+            64%
+          </div>
+          <p></p>
+        </li>
+      </ul>
+    </article>
+
+    <!--portFolio-->
+    <article class="blogContents_Portfolio" id="blogContents_Portfolio">
+      <ul class="portfolioSlideBox" id="portfolioSlideBox">
+        <li class="slideBox portfolioSlide_1" id="portfolioSlide_1">
+          <button class="slideStop" id="slideStop">
+            <span>일시정지 </span>
+          </button>
+          <img class="slideViewImg" id="slideViewImg" />
+          <div class="slideExplain" id="slideExplain">
+            <p class="slideText slideTitle">준비중입니다...</p>
+            <p class="slideText slideDay"></p>
+            <p class="slideText slideMent">잠시만 기다려주세요.</p>
+            <div class="btnBar"></div>
+          </div>
+        </li>
+      </ul>
+      <ul class="slidePreview" id="slidePreview">
+        <li class="preView preView_1" id="preView_1"></li>
+        <li class="preView preView_2" id="preView_2"></li>
+        <li class="preView preView_3" id="preView_3"></li>
+        <li class="preView preView_4" id="preView_4"></li>
+        <li class="preView preView_5" id="preView_5"></li>
+      </ul>
+    </article>
+  </section>
+
+  <!--footBar-->
+  <footer class="footerBar" id="footerBar">
+    <div class="footerCallmeBar" id="footerCallmeBar">
+      <p class="callmeMent callmeMentMove">
+        <span><i class="xi-kakaotalk kakaoIcon"></i></span>&nbsp; ID: dyrn21
+      </p>
+      <p class="callmeMent">
+        <span><i class="xi-call callIcon"></i></span>&nbsp; P.H: 010-8734-6373
+      </p>
+      <p class="callmeMent">
+        <span><i class="xi-mail maillIcon"></i></span>&nbsp; Email:
+        hks4919@gmail.com
+      </p>
+    </div>
+  </footer>
+</body>
+
+</html>

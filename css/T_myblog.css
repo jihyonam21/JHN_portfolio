@@ -1,0 +1,685 @@
+@charset "UTF-8";
+
+//사이즈 잡기 편하게 변수를 활용함
+@mixin BoxSizeing($sizeW, $sizeH) {
+    width: $sizeW;
+    height: $sizeH;
+    display: inline-block;
+  }
+  
+  // skill 페이지 게이지 애니메이션을 위한 프레임
+  @keyframes load {
+    //0%일때 작동
+    from {
+      width: 0%;
+    }
+  }
+  
+  //skill 페이지 게이지를 반복 사용하기 위함
+  @mixin SkillValandColor($S_val, $S_color) {
+    // $S_val 로 적었을땐 작동되지 않았음 #{} < 사용
+    // 단위가 다를경우 사용됨 calc 연산목적
+    // -40은 100%시 막대기 밖으로 텍스트 이탈을 막기위함
+    $S_result: calc(#{$S_val} - 40px);
+    width: $S_result;
+    background-color: $S_color;
+  }
+  
+  // % 마다 이미지 보여줄지 말지를 프레임 잡음
+  @keyframes fadeSlide {
+    0% {
+      opacity: 0;
+    }
+    11.11% {
+      opacity: 1;
+    }
+    33.33% {
+      opacity: 1;
+    }
+    44.44% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+  
+  //리셋
+  * {
+    margin: 0px;
+    padding: 0px;
+    border: 0px;
+    outline: 0px;
+  }
+  ul,
+  li {
+    list-style: none;
+  }
+  img {
+    border: 0;
+  }
+  
+  html,
+  body {
+    width: 100%;
+    height: 100%;
+    // 로드 안됬을때를 위한 컬러
+    background-color: #333333;
+  
+    body {
+      font-family: "Noto Sans KR", sans-serif;
+      line-height: 1;
+  
+      @media all and (min-width: 481px) {
+        .myBlogMainBox {
+          @include BoxSizeing(100%, 100%);
+          position: relative;
+  
+          .homeImgSlide > img {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+            // 애니메이션의 중간 상태 지정
+            // 애니메이션의 시간의 % 마다 opacity를 주기위함
+            animation-name: fadeSlide;
+            // 애니메이션이 한 사이클 완료하는 데 걸리는 시간을 지정
+            // 이미지가 5장 보여지는시간 15s 사이클 시간 60s
+            animation-duration: 60s;
+            //애니메이션이 몇 번 반복될지 지정 (무한)
+            animation-iteration-count: infinite;
+          }
+  
+          //슬라이드 이미지
+          // // 60s / 5(img) = 15s 애니메이션 딜레이
+          .homeImgSlide img:nth-child(1) {
+            animation-delay: 0s;
+          }
+          .homeImgSlide img:nth-child(2) {
+            animation-delay: 15s;
+          }
+          .homeImgSlide img:nth-child(3) {
+            animation-delay: 30s;
+          }
+          .homeImgSlide img:nth-child(4) {
+            animation-delay: 45s;
+          }
+          .homeImgSlide img:nth-child(5) {
+            animation-delay: 60s;
+          }
+          //
+  
+          .BlogNavBox {
+            @include BoxSizeing(18%, 100%);
+            background-color: rgba(25, 30, 40, 0.9);
+            float: left;
+            position: absolute;
+  
+            .NavListTop {
+              padding-top: 66%;
+              cursor: pointer;
+  
+              .NavHostName {
+                @include BoxSizeing(100%, auto);
+                color: #fff;
+                font-size: 2.3vw;
+                font-weight: 700;
+                text-align: center;
+              }
+              .NavHostSubName {
+                color: #979797;
+                text-align: center;
+                font-weight: 500;
+              }
+            }
+            .NavListBottom {
+              width: 100%;
+              text-align: center;
+              line-height: 55px;
+              margin-top: 21%;
+              cursor: pointer;
+  
+              .userNavGuide {
+                width: 100%;
+                height: 60px;
+                color: #d6d6d6;
+                font-size: 1vw;
+                font-weight: 400;
+                padding-top: -5px;
+              }
+              //네비게이션 이동시 마우스 어디에 위치해 있는지 시각적 효과
+              .userNavGuide:hover {
+                border-right: 4px solid #ffffff;
+              }
+            }
+          }
+  
+          .blogContents_Home {
+            @include BoxSizeing(82%, 100%);
+            background-color: rgba(25, 30, 40, 0.5);
+            float: left;
+            position: relative;
+            margin-left: 18%;
+  
+            .hostProfileImg {
+              width: calc(
+                11vw + 50px
+              ); //2020-08-18( width: 12vw )에서 calc로 변경
+              height: calc(
+                11vw + 50px
+              ); //2020-08-18( width: 12vw )에서 calc로 변경
+              display: inline-block;
+              border-radius: 20vw;
+              border: 1.1vw solid #f3f3f3;
+              background-image: url("../img/myImg_1.jpg");
+              background-size: cover;
+              background-repeat: no-repeat;
+  
+              position: absolute;
+              left: 50%; // 2020-08-18 top: 50% 삭제함
+              margin-top: calc(10% + 50px); // 2020-08-18 (-300px)에서 calc로 변경
+              margin-left: calc(
+                -5.5vw - 25px
+              ); // 2020-08-18 (7.6%)에서 calc로 변경
+            }
+  
+            .welcomeMent {
+              color: #fdfdfd;
+              font-size: 1.2vw;
+              text-align: center;
+              margin-top: calc(21% + 155px); //28%
+              margin-bottom: 20px;
+            }
+            .hostName {
+              color: #fff;
+              font-size: 2.4vw;
+              font-weight: 700;
+              text-align: center;
+              margin-bottom: 35px;
+  
+              .hostNameAdd {
+                font-size: 20px;
+                color: #fdfdfd;
+                font-weight: 400;
+              }
+            }
+            .uselanguage {
+              color: #fdfdfd;
+              font-size: 1.2vw;
+              text-align: center;
+              line-height: 35px;
+              letter-spacing: -1px;
+              word-spacing: 2px;
+            }
+          }
+  
+          //어바웃 구역 마크
+          .blogContents_About {
+            @include BoxSizeing(82%, 100%);
+            background-color: rgba(21, 27, 39, 0.9);
+            float: left;
+            position: relative;
+            display: none;
+            margin-left: 18%;
+  
+            .aboutBox {
+              @include BoxSizeing(100%, 90%);
+              position: absolute;
+              margin-top: 1%;
+  
+              .aboutBoxLeft {
+                @include BoxSizeing(31%, 100%);
+                margin-right: 2%;
+                margin-left: 2%;
+                display: inline-block;
+                float: left;
+  
+                .aboutContentLeft {
+                  @include BoxSizeing(100%, auto);
+                }
+              }
+              .aboutBoxMid {
+                @include BoxSizeing(31%, 100%);
+                margin-right: 2%;
+                display: inline-block;
+                float: left;
+  
+                .aboutContentMid {
+                  @include BoxSizeing(100%, auto);
+                }
+              }
+              .aboutBoxRight {
+                @include BoxSizeing(31%, 100%);
+                display: inline-block;
+  
+                .aboutContentRight {
+                  @include BoxSizeing(100%, auto);
+                }
+              }
+              .aboutDay {
+                margin-top: 18px;
+                margin-bottom: -3px;
+                margin-left: 2.4%;
+                font-size: 0.7vw;
+                font-weight: 300;
+                color: #ee763c;
+              }
+              .aboutTheme {
+                font-size: 2vw;
+                font-weight: 600;
+                line-height: 30px;
+                letter-spacing: -1px;
+                word-spacing: 2px;
+                color: #fff;
+                margin-bottom: 5px;
+  
+                cursor: pointer;
+                padding: 2%;
+                width: 100%;
+                border: none;
+                text-align: left;
+                outline: none;
+                transition: 0.4s;
+              }
+              .aboutTheme:hover {
+                color: #777;
+              }
+              .aboutTheme:after {
+                content: "\002B";
+                color: #777;
+                font-weight: bold;
+                float: right;
+                margin-left: 5px;
+              }
+              .aboutMent {
+                font-size: 0.9vw;
+                font-weight: 400;
+                line-height: 2em;
+                letter-spacing: -1px;
+                word-spacing: 2px;
+                color: rgb(190, 190, 190);
+                margin-bottom: -5px;
+  
+                padding: 0 2.5%;
+                max-height: 0px;
+                overflow: hidden;
+                transition: max-height 0.2s ease-out;
+  
+                .pointText {
+                  font-weight: 600;
+                  color: #e2e2e2;
+                }
+              }
+              .smallBr {
+                width: 100%;
+                height: 13px;
+                display: block;
+              }
+              .active:after {
+                content: "\2212";
+              }
+            }
+          }
+          .blogContents_Skill {
+            @include BoxSizeing(82%, 100%);
+            background-color: rgba(21, 27, 39, 0.9);
+            float: left;
+            position: relative;
+            display: none;
+            margin-left: 18%;
+  
+            .skillIconImg {
+              @include BoxSizeing(23%, 82.5%);
+              margin-top: 7%;
+              margin-left: 7%;
+              position: absolute;
+              float: left;
+              display: none;
+  
+              .IconImg {
+                @include BoxSizeing(33.6%, auto);
+                float: left;
+                margin-right: 4%;
+                margin-bottom: 4%;
+              }
+              .IconImg:hover {
+                background-color: #333;
+                opacity: 0.7;
+              }
+            }
+            .skillBox {
+              @include BoxSizeing(60%, 80%);
+              margin-top: 7%;
+              margin-left: 31%;
+  
+              .skillHtml {
+                @include BoxSizeing(100%, 9%);
+  
+                .htmlSkill::before {
+                  @include SkillValandColor(95%, #ffd24d);
+                }
+              }
+              .skillCss {
+                @include BoxSizeing(100%, 9%);
+  
+                .cssSkill::before {
+                  @include SkillValandColor(91%, #ffd24d);
+                }
+              }
+              .skillJavascript {
+                @include BoxSizeing(100%, 9%);
+  
+                .javascriptSkill::before {
+                  @include SkillValandColor(80%, #ffdd77);
+                }
+              }
+              .skillJquery {
+                @include BoxSizeing(100%, 9%);
+  
+                .jquerySkill::before {
+                  @include SkillValandColor(86%, #ffdd77);
+                }
+              }
+              .skillSass {
+                @include BoxSizeing(100%, 9%);
+  
+                .sassSkill::before {
+                  @include SkillValandColor(82%, #ffdd77);
+                }
+              }
+              .skillAjax {
+                @include BoxSizeing(100%, 9%);
+  
+                .ajaxSkill::before {
+                  @include SkillValandColor(74%, #a6cfe3);
+                }
+              }
+              .skillPhp {
+                @include BoxSizeing(100%, 9%);
+  
+                .phpSkill::before {
+                  @include SkillValandColor(73%, #a6cfe3);
+                }
+              }
+              .skillPug {
+                @include BoxSizeing(100%, 9%);
+  
+                .pugSkill::before {
+                  @include SkillValandColor(58%, #bfd9e6);
+                }
+              }
+              .skillNodejs {
+                @include BoxSizeing(100%, 9%);
+  
+                .nodejsSkill::before {
+                  @include SkillValandColor(57%, #bfd9e6);
+                }
+              }
+              .skillPhotoshop {
+                @include BoxSizeing(100%, 9%);
+  
+                .photoshopSkill::before {
+                  @include SkillValandColor(93%, #ffd24d);
+                }
+              }
+              .skillIllustrator {
+                @include BoxSizeing(100%, 9%);
+  
+                .illustratorSkill::before {
+                  @include SkillValandColor(64%, #ffe69a);
+                }
+              }
+              .skillBoot4 {
+                @include BoxSizeing(100%, 9%);
+  
+                .boot4Skill::before {
+                  @include SkillValandColor(79%, #ffdd77);
+                }
+              }
+              .allSkillBar {
+                background-color: #eee;
+                padding: 2px;
+                border-radius: 15px;
+                margin-bottom: 5px;
+                font-size: 14px;
+                font-weight: bold;
+                text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+                color: #333;
+              }
+              .allSkillBar::before {
+                content: attr(data-skill);
+                background-color: #f3b0ff;
+                display: inline-block;
+                padding: 5px 0 5px 10px;
+                border-radius: inherit;
+                animation: load 2s 0s;
+              }
+            }
+          }
+          .blogContents_Portfolio {
+            @include BoxSizeing(82%, 100%);
+            background-color: rgba(21, 27, 39, 0.9);
+            float: left;
+            position: relative;
+            display: none;
+            margin-left: 18%;
+  
+            .portfolioSlideBox {
+              @include BoxSizeing(85%, 70%);
+              border-radius: 10px;
+              position: absolute;
+              top: 10%;
+              left: 50%;
+              margin-left: -42.5%;
+  
+              .slideBox {
+                @include BoxSizeing(100%, 100%);
+  
+                .slideViewImg {
+                  @include BoxSizeing(100%, 100%);
+                  float: left;
+                }
+                // 2020-07-15 추가함
+                .slideExplain {
+                  @include BoxSizeing(37%, 100%);
+                  clear: both;
+                  position: absolute;
+                  margin-left: -37%;
+                  background-color: rgba(25, 30, 40, 0.9);
+                  opacity: 0.9;
+                  //
+                  .slideTitle {
+                    @include BoxSizeing(100%, 5%);
+                    font-size: 2vw;
+                    text-align: center;
+                    font-weight: 600;
+                    line-height: 35px;
+                    letter-spacing: -1px;
+                    word-spacing: 2px;
+                    margin-top: 2%;
+                    color: #ffd044;
+                    text-shadow: 3px 3px 4px #111111;
+                  }
+                  .slideDay {
+                    line-height: 26px;
+                    letter-spacing: -1px;
+                    word-spacing: 2px;
+                    text-align: center;
+                    font-size: 1vw;
+                    font-weight: 400;
+                    color: #ffffff;
+                  }
+                  .slideMent {
+                    @include BoxSizeing(100%, 85%);
+                    font-size: 1.1vw;
+                    font-weight: 400;
+                    line-height: 1.4;
+                    letter-spacing: -1px;
+                    word-spacing: 2px;
+                    padding: 5px 10px;
+                    color: #ffffff;
+                  }
+                }
+                .documentBtnColor {
+                  width: 60%;
+                  height: auto;
+                  float: right;
+                  font-size: 0.9vw;
+                  background-color: #ffd24d;
+                  font-weight: 500;
+                  margin-right: 25px;
+                  position: relative;
+                  text-align: center;
+                  padding: 0px;
+                  bottom: 0;
+                  margin-bottom: 5%;
+                }
+                .documentBtnColor:hover {
+                  background-color: #ffe69a;
+                }
+                .btnBar {
+                  width: 40%;
+                  position: absolute;
+                  bottom: 0;
+                  right: 0;
+                }
+              }
+              .slideStop {
+                border-radius: 4px;
+                background-color: #f4511e;
+                border: none;
+                color: #ffffff;
+                text-align: center;
+                font-size: 1.2vw;
+                padding: 10px;
+                width: 15%;
+                transition: all 0.5s;
+                cursor: pointer;
+                margin: 5px;
+                position: absolute;
+                bottom: 1%;
+                right: 41%;
+              }
+              .slideStop span {
+                cursor: pointer;
+                display: inline-block;
+                position: relative;
+                transition: 0.5s;
+              }
+              .slideStop span:after {
+                content: " \00bb";
+                position: absolute;
+                opacity: 0;
+                top: 0;
+                right: -20px;
+                transition: 0.5s;
+                line-height: 15px;
+              }
+              .slideStop:hover span {
+                padding-right: 25px;
+              }
+              .slideStop:hover span:after {
+                opacity: 1;
+                right: 0;
+              }
+            }
+            .slidePreview {
+              @include BoxSizeing(85%, 11%);
+              position: absolute;
+              bottom: 4%;
+              left: 50%;
+              margin-left: -42.5%;
+  
+              .preView {
+                @include BoxSizeing(17%, 100%);
+                float: left;
+              }
+              .preView:hover {
+                transform: scale(1.2);
+                transition: transform 0.35s;
+                background-size: cover;
+                cursor: pointer;
+                background-color: rgba(3, 3, 3, 0.5);
+                outline: 1px solid #fff;
+              }
+              .preView_1 {
+                background-image: url("../img/LolMarket_view.jpg");
+                background-size: cover;
+                background-repeat: no-repeat;
+                margin-left: 7.5%;
+              }
+              .preView_2 {
+                background-image: url("../img/GlenBliss_view.jpg");
+                background-size: cover;
+                background-repeat: no-repeat;
+              }
+              .preView_3 {
+                background-image: url("../img/BookList_view.jpg");
+                background-size: cover;
+                background-repeat: no-repeat;
+              }
+              .preView_4 {
+                background-image: url("../img/Product_view.jpg");
+                background-size: cover;
+                background-repeat: no-repeat;
+              }
+              .preView_5 {
+                background-image: url("../img/Photoshop_view.jpg");
+                background-size: cover;
+                background-repeat: no-repeat;
+              }
+            }
+          }
+        }
+        .footerBar {
+          width: 100%;
+          height: 15%;
+          position: fixed;
+          display: none;
+          margin-top: -5%;
+  
+          .footerCallmeBar {
+            width: 100%;
+            height: 100%;
+            display: none;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            background-color: rgba(21, 27, 39, 0.9);
+  
+            .callmeMentMove {
+              margin-left: 17%;
+            }
+            .callmeMent {
+              width: 25%;
+              height: 30%;
+              color: #fff;
+              line-height: 3em;
+              font-size: 1vw;
+              float: left;
+              margin-top: 1.3%;
+  
+              .kakaoIcon {
+                font-size: 2.5vw;
+                color: #f7e600;
+                float: left;
+              }
+              .callIcon {
+                font-size: 2.5vw;
+                color: #009900;
+                float: left;
+              }
+              .maillIcon {
+                font-size: 2.5vw;
+                color: #e94232;
+                float: left;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  
